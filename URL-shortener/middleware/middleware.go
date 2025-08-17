@@ -1,6 +1,9 @@
 package middleware
 
-import "net/http"
+import (
+	"net/http"
+
+) 
 
 // устанавливает заголовок Content-Type
 func JsonContentTypeMiddleware(next http.Handler) http.Handler {

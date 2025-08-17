@@ -59,7 +59,7 @@ func ShortenHandler(w http.ResponseWriter, r *http.Request) {
 	log.Println("URL не существует в БД")
 
 	// Генерация короткого кода
-	shortCode := generateShortCode(8)
+	shortCode := GenerateShortCode(8)
 	log.Println("shortCode:", shortCode)
 
 	// Вставка данных в БД
@@ -168,7 +168,7 @@ type StatsResponse struct {
 }
 
 
-func generateShortCode(length int) string {
+func GenerateShortCode(length int) string {
 	const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
 	var sb strings.Builder
 	for i := 0; i < length; i++ {
