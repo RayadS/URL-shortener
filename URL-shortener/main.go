@@ -9,6 +9,7 @@ import (
 	"urlshortener/db"
     "urlshortener/handlers"
     "urlshortener/middleware"
+	
 )
 
 func main() {
@@ -29,7 +30,7 @@ func main() {
 	r.HandleFunc("/stats/{short_code}", handlers.StatsHandler).Methods("GET")
 
 	
-	r.Use(middleware.JSONContentTypeMiddleware)
+	r.Use(middleware.JsonContentTypeMiddleware)
 
 	
 	log.Println("Сервер запущен на порту 8080")

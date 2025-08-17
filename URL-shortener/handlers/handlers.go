@@ -1,4 +1,4 @@
-package main
+package handlers
 
 import (
 	
@@ -10,12 +10,13 @@ import (
 	"strings"
 	"crypto/rand"
 	"math/big"
+	"database/sql"
 
 	"github.com/gorilla/mux"
 )
 
 
-
+var DB *sql.DB
 var clickCounts = make(map[string]int)
 var clickCountsMutex sync.RWMutex
 // тут ссылка сокращатся, +логи(видны в консоле отладки)

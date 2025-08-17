@@ -1,13 +1,14 @@
-package main
+package db
 
 import (
 	"database/sql"
 	"fmt"
 	"log"
 	_ "github.com/denisenkom/go-mssqldb"
+	
 )
 
-// DB - глобальная переменная для доступа к БД
+
 var DB *sql.DB
 
 func ConnectDB() (*sql.DB, error) {
@@ -29,7 +30,7 @@ func ConnectDB() (*sql.DB, error) {
 	}
 
 	fmt.Println("Успешное подключение к базе данных!")
-	DB = db // Сохраняем подключение в глобальную переменную
+	DB = db 
 	return db, nil
 }
 

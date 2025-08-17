@@ -1,4 +1,4 @@
-package main
+package models
 
 // URL структура для представления URL
 type URL struct {
